@@ -3,8 +3,20 @@ import numpy as np
 import pickle
 import time
 import random
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+# from tensorflow.keras.models import load_model
+# from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+import pickle
+
+def pad_sequences(sequences, maxlen, padding="pre"):
+    padded = []
+    for seq in sequences:
+        if len(seq) >= maxlen:
+            padded.append(seq[-maxlen:])
+        else:
+            pad = [0] * (maxlen - len(seq))
+            padded.append((pad + seq) if padding == "pre" else (seq + pad))
+    return np.array(padded)
 
 # ─── Page Config ───────────────────────────────────────────────────────────────
 st.set_page_config(
