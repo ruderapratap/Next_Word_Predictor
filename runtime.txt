@@ -1,1 +1,4 @@
-python-3.11
+echo "3.11" > .python-version
+git add .python-version
+git commit -m "Pin Python to 3.11 for TensorFlow compatibility"
+git push
