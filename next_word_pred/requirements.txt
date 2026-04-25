@@ -1,10 +1,4 @@
 streamlit
 numpy
-pickle
-time
-random
 tensorflow
-seaborn
-pandas
-pytorch
-matplotlib
+keras
